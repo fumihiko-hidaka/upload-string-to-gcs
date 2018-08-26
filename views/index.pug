@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        title= 'gcsに文字列データをアップロード'
+    body
+        section
+            a(href= uploadUrl target="blank") アップロードしたテキストデータ
+
+        section
+            form(method='POST' target='blank')
+                input(type="text" name="text" maxlength=10 placeholder="")
+                input(type="submit")

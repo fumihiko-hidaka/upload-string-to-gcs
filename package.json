@@ -1,0 +1,19 @@
+{
+  "name": "upload-string-to-gcs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "8.x.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^1.7.0",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}
