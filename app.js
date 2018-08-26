@@ -2,6 +2,7 @@
 
 const uploadPath = 'upload-string-to-gcs/sample.txt';
 const uploadUrl = `https://neko-tech-test.appspot.com/${uploadPath}`;
+const routePath = '/upload-string-to-gcs';
 
 const Storage = require('@google-cloud/storage');
 const Readable = require('stream').Readable;
@@ -10,10 +11,6 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'pug');
 app.use(express.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => {
-  res.render('index', { uploadUrl })
-});
 
 const uploadPromise = (text) => {
   return new Promise((resolve, reject) => {
@@ -41,8 +38,11 @@ const uploadPromise = (text) => {
   });
 };
 
+app.get(routePath, (req, res) => {
+  res.render('index', { uploadUrl })
+});
 
-app.post('/', async (req, res) => {
+app.post(routePath, async (req, res) => {
   const body = req.body.text;
 
   if (typeof body === 'string' && body.length > 0) {
