@@ -1,7 +1,7 @@
 'use strict';
 
 const uploadPath = 'upload-string-to-gcs/sample.txt';
-const uploadUrl = `https://neko-tech-test.appspot.com/${uploadPath}`;
+const uploadUrl = `https://${process.env.UPLOAD_BUCKET}.storage.googleapis.com/${uploadPath}`;
 const routePath = '/*';
 
 const Storage = require('@google-cloud/storage');
