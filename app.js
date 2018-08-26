@@ -2,7 +2,7 @@
 
 const uploadPath = 'upload-string-to-gcs/sample.txt';
 const uploadUrl = `https://neko-tech-test.appspot.com/${uploadPath}`;
-const routePath = '/upload-string-to-gcs';
+const routePath = '/*';
 
 const Storage = require('@google-cloud/storage');
 const Readable = require('stream').Readable;
