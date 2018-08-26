@@ -4,4 +4,4 @@ service: upload-string-to-gcs
 # [END app_yaml]
 
 env_variables:
-  UPLOAD_BUCKET: neko-tech-test-public-storage
+  UPLOAD_BUCKET: neko-tech-test.appspot.com
