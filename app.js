@@ -45,7 +45,7 @@ app.get(routePath, (req, res) => {
 app.post(routePath, async (req, res) => {
   const body = req.body.text;
 
-  if (typeof body === 'string' && body.length > 0) {
+  if (typeof body === 'string' && body.length > 0 && body.length <= 10) {
     await uploadPromise(body);
   }
 
