@@ -8,6 +8,8 @@ const Storage = require('@google-cloud/storage');
 const Readable = require('stream').Readable;
 
 const express = require('express');
+const expressVersion = require('express/package').version;
+
 const app = express();
 app.set('view engine', 'pug');
 app.use(express.urlencoded({ extended: false }));
@@ -39,7 +41,7 @@ const uploadPromise = (text) => {
 };
 
 app.get(routePath, (req, res) => {
-  res.render('index', { uploadUrl })
+  res.render('index', { uploadUrl, expressVersion })
 });
 
 app.post(routePath, async (req, res) => {
